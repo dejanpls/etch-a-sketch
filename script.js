@@ -37,6 +37,7 @@ function generateStartGrid() {
 	}
 
 	generateGrid(rows, columns, numberOfBoxes);
+	currentColor = "black";
 }
 
 function generateGrid(rows, columns, numberOfBoxes) {
@@ -79,7 +80,6 @@ function setCurrentColor(e) {
 	} else if (e.target.textContent.includes("RGB")) {
 		currentColor = "yellow";
 	}
-	 
 }
 
 function changeColor(e) {
