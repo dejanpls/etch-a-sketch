@@ -18,6 +18,11 @@ generateStartGrid();
 // Event listeners
 generateBtn.addEventListener("mousedown", generateNewGrid);
 resetBtn.addEventListener("mousedown", generateStartGrid);
+colorBtn.addEventListener("mousedown", resetColor);
+blackBtn.addEventListener("mousedown", setCurrentColor);
+rgbBtn.addEventListener("mousedown", setCurrentColor);
+
+gridContainer.addEventListener("mouseover", changeColor);
 
 // Functions
 function generateStartGrid() {
@@ -66,4 +71,27 @@ function generateRows() {
 	} while (Number.isNaN(rows) || rows > 100 || rows < 1)
 
 	return rows
+}
+
+function setCurrentColor(e) {
+	if (e.target.textContent.includes("Black")) {
+		currentColor = "black";
+	} else if (e.target.textContent.includes("RGB")) {
+		currentColor = "yellow";
+	}
+	 
+}
+
+function changeColor(e) {
+	if (e.target.className === "grid-box") {
+		e.target.style.background = currentColor;
+	}
+}
+
+function resetColor() {
+	existingGridBoxes = document.querySelectorAll("div.grid-box");
+	existingGridBoxes.forEach(box => {
+		if (box.style.background !== "white") box.style.background = "white";
+	})
+	currentColor = "black";
 }
