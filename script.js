@@ -14,8 +14,10 @@ let currentColor = "black";
 
 generateStartGrid();
 
+
 // Event listeners
 generateBtn.addEventListener("mousedown", generateNewGrid);
+resetBtn.addEventListener("mousedown", generateStartGrid);
 
 // Functions
 function generateStartGrid() {
