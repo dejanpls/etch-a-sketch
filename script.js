@@ -8,6 +8,8 @@ const colorBtn = document.querySelector("button.reset-color");
 const blackBtn = document.querySelector("button.black-color");
 const rgbBtn = document.querySelector("button.rgb-color");
 
+const currentGridSize = document.querySelector("h3.current-grid-size");
+
 let existingGridBoxes = document.querySelectorAll("div.grid-box");
 
 let currentColor = "black";
@@ -37,17 +39,19 @@ function generateStartGrid() {
 	}
 
 	generateGrid(rows, columns, numberOfBoxes);
-	currentColor = "black";
 }
 
 function generateGrid(rows, columns, numberOfBoxes) {
 	for (; numberOfBoxes > 0; numberOfBoxes--) {
 		const gridBox = document.createElement("div");
 		gridBox.classList = "grid-box";
-		gridBox.style.width = `${600/ rows}px`
+		gridBox.style.width = `${600 / rows}px`
 		gridBox.style.height = `${600 / columns}px`
 		gridContainer.appendChild(gridBox);
 	}
+
+	currentColor = "black";
+	currentGridSize.textContent = `Grid Size: ${rows} X ${columns}`;
 }
 
 function generateNewGrid() {
