@@ -6,7 +6,7 @@ const resetBtn = document.querySelector("button.reset-grid");
 const colorBtn = document.querySelector("button.reset-color");
 
 const blackBtn = document.querySelector("button.black-color");
-const rgbBtn = document.querySelector("button.rgb-color");
+const randomBtn = document.querySelector("button.random-color");
 
 const currentGridSize = document.querySelector("h3.current-grid-size");
 
@@ -22,9 +22,10 @@ generateBtn.addEventListener("mousedown", generateNewGrid);
 resetBtn.addEventListener("mousedown", generateStartGrid);
 colorBtn.addEventListener("mousedown", resetColor);
 blackBtn.addEventListener("mousedown", setCurrentColor);
-rgbBtn.addEventListener("mousedown", setCurrentColor);
+randomBtn.addEventListener("mousedown", setCurrentColor);
 
 gridContainer.addEventListener("mouseover", changeColor);
+
 
 // Functions
 function generateStartGrid() {
@@ -79,10 +80,10 @@ function generateRows() {
 }
 
 function setCurrentColor(e) {
-	if (e.target.textContent.includes("Black")) {
+	if (this.textContent.includes("Black")) {
 		currentColor = "black";
-	} else if (e.target.textContent.includes("RGB")) {
-		currentColor = "yellow";
+	} else if (this.textContent.includes("Random")) {
+		currentColor = getRandomColor();
 	}
 }
 
@@ -90,6 +91,15 @@ function changeColor(e) {
 	if (e.target.className === "grid-box") {
 		e.target.style.background = currentColor;
 	}
+}
+
+function getRandomColor() {
+	let colors = [
+		"gray", "maroon", "red", "purple", "fuchsia", "green", 
+		"lime", "olive", "yellow", "navy", "blue", "teal", "aqua"
+	];
+
+	return colors[(Math.floor(Math.random() * colors.length))];
 }
 
 function resetColor() {
