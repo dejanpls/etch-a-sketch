@@ -16,3 +16,14 @@
 	border: 1px solid lightgrey;
 	background: white;
 }
+
+.display-color {
+	display: flex;
+	align-items: center;
+}
+
+.color-box {
+	width: 20px;
+	height: 20px;
+	background: black;
+}

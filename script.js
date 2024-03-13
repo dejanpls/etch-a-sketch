@@ -9,6 +9,9 @@ const blackBtn = document.querySelector("button.black-color");
 const randomBtn = document.querySelector("button.random-color");
 
 const currentGridSize = document.querySelector("h3.current-grid-size");
+const chosenColor = document.querySelector("h3.chosen-color");
+const colorBox = document.querySelector("div.color-box");
+
 
 let existingGridBoxes = document.querySelectorAll("div.grid-box");
 
@@ -28,6 +31,19 @@ gridContainer.addEventListener("mouseover", changeColor);
 
 
 // Functions
+function generateGrid(rows, columns, numberOfBoxes) {
+	for (; numberOfBoxes > 0; numberOfBoxes--) {
+		const gridBox = document.createElement("div");
+		gridBox.classList = "grid-box";
+		gridBox.style.width = `${600 / rows}px`
+		gridBox.style.height = `${600 / columns}px`
+		gridContainer.appendChild(gridBox);
+	}
+
+	currentGridSize.textContent = `Grid Size: ${rows} X ${columns}`;
+	updateDisplayColor();
+}
+
 function generateStartGrid() {
 	const rows = 16;
 	const columns = rows;
@@ -40,19 +56,6 @@ function generateStartGrid() {
 	}
 
 	generateGrid(rows, columns, numberOfBoxes);
-}
-
-function generateGrid(rows, columns, numberOfBoxes) {
-	for (; numberOfBoxes > 0; numberOfBoxes--) {
-		const gridBox = document.createElement("div");
-		gridBox.classList = "grid-box";
-		gridBox.style.width = `${600 / rows}px`
-		gridBox.style.height = `${600 / columns}px`
-		gridContainer.appendChild(gridBox);
-	}
-
-	currentColor = "black";
-	currentGridSize.textContent = `Grid Size: ${rows} X ${columns}`;
 }
 
 function generateNewGrid() {
@@ -79,12 +82,18 @@ function generateRows() {
 	return rows
 }
 
+function updateDisplayColor() {
+	chosenColor.textContent = `Current Color: ${currentColor}`;
+	colorBox.style.background = currentColor;
+}
+
 function setCurrentColor(e) {
 	if (this.textContent.includes("Black")) {
 		currentColor = "black";
 	} else if (this.textContent.includes("Random")) {
 		currentColor = getRandomColor();
-	}
+	} 
+	updateDisplayColor();
 }
 
 function changeColor(e) {
@@ -107,5 +116,4 @@ function resetColor() {
 	existingGridBoxes.forEach(box => {
 		if (box.style.background !== "white") box.style.background = "white";
 	})
-	currentColor = "black";
 }
