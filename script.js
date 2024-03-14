@@ -8,6 +8,7 @@ const clearSurfaceBtn = document.querySelector("button.clear-surface");
 const blackBtn = document.querySelector("button.black-color");
 const randomBtn = document.querySelector("button.random-color");
 const rgbBtn = document.querySelector("button.rgb-color");
+const eraseBtn = document.querySelector("button.erase-color");
 
 const currentGridSize = document.querySelector("h3.current-grid-size");
 const chosenColor = document.querySelector("h3.chosen-color");
@@ -34,6 +35,7 @@ clearSurfaceBtn.addEventListener("mousedown", clearSurface);
 blackBtn.addEventListener("mousedown", setCurrentColor);
 randomBtn.addEventListener("mousedown", setCurrentColor);
 rgbBtn.addEventListener("mousedown", setCurrentColor);
+eraseBtn.addEventListener("mousedown", setCurrentColor);
 
 // Draw color on mouse move
 gridContainer.addEventListener("mouseover", changeColor);
@@ -47,6 +49,8 @@ function setCurrentColor(e) {
 		currentColor = getRandomColor();
 	} else if (this.textContent.includes("RGB")) {
 		currentColor = "rgb";
+	} else if (this.textContent.includes("Erase")) {
+		currentColor = "white";
 	}
 	updateDisplayColor();
 }
@@ -54,14 +58,10 @@ function setCurrentColor(e) {
 function changeColor(e) {
 	if (e.target.className === "grid-box") {
 
-		if (currentColor === "black") {
-			e.target.style.background = currentColor;
-		} else if (currentColor === "rgb") {
+		if (currentColor === "rgb") {
 			e.target.style.background = getRandomColor();
-		} else {
-			e.target.style.background = currentColor;
 		}
-		
+		e.target.style.background = currentColor;
 	}
 }
 
@@ -118,11 +118,14 @@ function generateRows() {
 }
 
 function updateDisplayColor() {
-	chosenColor.textContent = `Current Color: ${currentColor}`;
 
 	if (currentColor === "rgb") {
 		colorBox.style.background = "linear-gradient(to right,red 33%, green 33% 66%, blue 66%)";
+	} else if (currentColor == "white") {
+		colorBox.style.background = "Erase";
 	}
+	
+	chosenColor.textContent = `Current Color: ${currentColor}`;
 
 	colorBox.style.background = currentColor;
 
