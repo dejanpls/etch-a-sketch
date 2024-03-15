@@ -14,13 +14,11 @@ const currentGridSize = document.querySelector("h3.current-grid-size");
 const chosenColor = document.querySelector("h3.chosen-color");
 const colorBox = document.querySelector("div.color-box");
 
-
 let existingGridBoxes = document.querySelectorAll("div.grid-box");
 
 let currentColor = "black";
 
 generateStartGrid();
-
 
 // Generate grid 1x1 up to 100x100
 generateBtn.addEventListener("mousedown", generateNewGrid);
@@ -39,7 +37,6 @@ eraseBtn.addEventListener("mousedown", setCurrentColor);
 
 // Draw color on mouse move
 gridContainer.addEventListener("mouseover", changeColor);
-
 
 // Functions
 function setCurrentColor(e) {
@@ -65,16 +62,13 @@ function changeColor(e) {
 	}
 }
 
-
 function generateGrid(rows, columns, numberOfBoxes) {
-	const width = gridContainer.style.width;
-	console.log(gridContainer);
 
 	for (; numberOfBoxes > 0; numberOfBoxes--) {
 		const gridBox = document.createElement("div");
 		gridBox.classList = "grid-box";
 		gridBox.style.width = `${600 / rows}px`
-		gridBox.style.height = `${600 / columns}px`
+		gridBox.style.height = `${600 / rows}px`
 		gridContainer.appendChild(gridBox);
 	}
 
