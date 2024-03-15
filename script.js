@@ -67,6 +67,9 @@ function changeColor(e) {
 
 
 function generateGrid(rows, columns, numberOfBoxes) {
+	const width = gridContainer.style.width;
+	console.log(gridContainer);
+
 	for (; numberOfBoxes > 0; numberOfBoxes--) {
 		const gridBox = document.createElement("div");
 		gridBox.classList = "grid-box";
@@ -120,13 +123,14 @@ function generateRows() {
 function updateDisplayColor() {
 
 	if (currentColor === "rgb") {
+		// red, green and blue background
 		colorBox.style.background = "linear-gradient(to right,red 33%, green 33% 66%, blue 66%)";
-	} else if (currentColor == "white") {
-		colorBox.style.background = "Erase";
+	} else if (currentColor === "white") {
+		chosenColor.textContent = `Current Color: Erase`;
+	} else {
+		chosenColor.textContent = `Current Color: ${currentColor}`;
 	}
 	
-	chosenColor.textContent = `Current Color: ${currentColor}`;
-
 	colorBox.style.background = currentColor;
 
 }
