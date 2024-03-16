@@ -2,28 +2,76 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	font-family: "Poppins", sans-serif;
+	color: #eef4ed;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #3d405b;
+}
+
+.container {
+	width: 900px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+h1.title,
+h3.current-grid-size,
+h3.chosen-color {
+	font-family: "Madimi One", sans-serif;
 }
 
 .grid-container {
-	max-width: 600px;
-	max-height: 600px;
+	max-width: 760px;
+	max-height: 760px;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: space-between;
 }
 
 .grid-box {
-	border: 1px solid lightgrey;
+	border: none;
 	background: white;
+}
+
+div.buttons {
+	width: 760px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+button.btn {
+	padding: 8px;
+	background: #023047;
+	border: none;
+
 }
 
 .display-color {
 	display: flex;
 	align-items: center;
+	gap: 10px;
 }
 
 .color-box {
 	width: 30px;
 	height: 20px;
 	background: black;
+	border: 1px solid black;
+}
+
+div.footer {
+	height: 4vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

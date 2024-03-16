@@ -67,8 +67,8 @@ function generateGrid(rows, columns, numberOfBoxes) {
 	for (; numberOfBoxes > 0; numberOfBoxes--) {
 		const gridBox = document.createElement("div");
 		gridBox.classList = "grid-box";
-		gridBox.style.width = `${600 / rows}px`
-		gridBox.style.height = `${600 / rows}px`
+		gridBox.style.width = `${760 / rows}px`
+		gridBox.style.height = `${760 / rows}px`
 		gridContainer.appendChild(gridBox);
 	}
 
@@ -119,6 +119,7 @@ function updateDisplayColor() {
 	if (currentColor === "rgb") {
 		// red, green and blue background
 		colorBox.style.background = "linear-gradient(to right,red 33%, green 33% 66%, blue 66%)";
+		chosenColor.textContent = `Current Color: ${currentColor}`;
 	} else if (currentColor === "white") {
 		chosenColor.textContent = `Current Color: Erase`;
 	} else {
