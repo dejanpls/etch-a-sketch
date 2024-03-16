@@ -37,8 +37,21 @@ eraseBtn.addEventListener("mousedown", setCurrentColor);
 
 // Draw color on mouse move
 gridContainer.addEventListener("mouseover", changeColor);
+gridContainer.addEventListener("mousedown", darkenColor);
 
 // Functions
+function darkenColor(e) {
+	if (e.target.className === "grid-box") {
+
+		let filter = e.target.style.filter;
+		let percentage = filter.replace(/[^0-9]/g, '');
+		
+		if (percentage > 0) {
+			e.target.style.filter = `brightness(${percentage - 10}%)`;
+		}
+	}
+}
+
 function setCurrentColor(e) {
 	if (this.textContent.includes("Black")) {
 		currentColor = "black";
@@ -54,6 +67,8 @@ function setCurrentColor(e) {
 
 function changeColor(e) {
 	if (e.target.className === "grid-box") {
+		
+		e.target.style.filter = "brightness(100%)";
 
 		if (currentColor === "rgb") {
 			e.target.style.background = getRandomColor();
