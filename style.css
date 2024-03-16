@@ -14,12 +14,24 @@ body {
 }
 
 .container {
-	width: 900px;
-	height: 100vh;
+	width: 800px;
+	height: 93vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: flex-start;
+}
+
+h1.title {
+	margin: 40px 0;
+	font-size: 48px;
+}
+
+
+h3.current-grid-size,
+h3.chosen-color {
+	font-size: 15px;
+	text-align: center;
 }
 
 h1.title,
@@ -28,9 +40,24 @@ h3.chosen-color {
 	font-family: "Madimi One", sans-serif;
 }
 
+div.main-panel {
+	display: flex;
+	box-shadow: 4px 4px 15px 1px #343a40;
+}
+
+div.control-panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	gap: 10px;
+	background: #264653;
+}
+
 .grid-container {
-	max-width: 760px;
-	max-height: 760px;
+	max-width: 600px;
+	max-height: 600px;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: space-between;
@@ -41,42 +68,78 @@ h3.chosen-color {
 	background: white;
 }
 
+input[type="color"] {
+	width: 150px;
+	height: 36;
+}
+
 div.buttons {
-	width: 760px;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
+	gap: 10px;
 
 }
 
 button.btn {
+	width: 150px;
 	padding: 8px;
 	background: #023047;
 	border: none;
-
+	transition: 0.3s;
+	font-size: 13px;
+	cursor: pointer;
 }
 
-.display-color {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+div.color-palette {
+	background: #065a60;
+	height: 36px;
+    position: relative;
+    width: 150px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 13px;
+}
+
+div.color-palette input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+
+button.btn:active {
+	background: #3d405b;
+	box-shadow: 2px 2px 10px 2px #343a40;
+}
+
+button.clear-surface {
+	background: #ad2e24;
 }
 
 .color-box {
-	width: 30px;
-	height: 20px;
+	width: 150px;
+	height: 36px;
 	background: black;
-	border: 1px solid black;
 }
 
 div.footer {
-	height: 4vh;
+	height: 7vh;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 12px;
+	font-size: 13px;
+	background: #264653;
+	color: #d5d3d8;
 }
 
 .footer a {
 	text-decoration: none;
+	color: #d5d3d8;
 }

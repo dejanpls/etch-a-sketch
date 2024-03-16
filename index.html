@@ -15,29 +15,33 @@
 <body>
 	<div class="container">
 		<h1 class="title">Etch-A-Sketch</h1>
-		<div class="grid-container">
-			
-		</div>
-		<div class="buttons">
-			<button class="btn generate-grid">Generate Grid</button>
-			<button class="btn reset-grid">Reset Grid</button>
-			<button class="btn clear-surface">Clear Surface</button>
-			<button class="btn black-color">Black Color</button>
-			<button class="btn random-color">Random Color</button>
-			<button class="btn rgb-color">RGB Color</button>
-			<button class="btn erase-color">Erase Color</button>
-		</div>
-
-		<h3 class="current-grid-size"></h3>
-
-		<div class="display-color">
-			<h3 class="chosen-color"></h3>
-			<div class="color-box"></div>
-		</div>
-		
+		<div class="main-panel">
+			<div class="grid-container">
+			</div>
+			<div class="control-panel">
+				<div class="buttons">
+					<button class="btn generate-grid">Generate Grid</button>
+					<button class="btn reset-grid">Reset Grid</button>
+					<button class="btn black-color">Black Color</button>
+					<button class="btn random-color">Random Color</button>
+					<button class="btn rgb-color">RGB Color</button>
+					<button class="btn erase-color">Erase Color</button>
+					<div class="color-palette">
+						Select Color
+						<input type="color"/>
+					</div>
+					<button class="btn clear-surface">Clear Surface</button>
+				</div>
+				
+				<h3 class="current-grid-size"></h3>
+				
+				<div class="color-box"></div>
+				
+			</div>
+		</div>	
 	</div>
 	<div class="footer">
-		Made with love by <a href="https://github.com/dejanpls">@dejanpls</a>
+		Made with ❤️ by @<a href="https://github.com/dejanpls">dejanpls</a>
 	</div>
 </body>
 </html>
