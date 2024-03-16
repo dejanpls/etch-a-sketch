@@ -1,8 +1,8 @@
 # Each-A-Sketch 
 
-## A Project from <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch#project-solution">TOP</a>
+## A Project from <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch#project-solution">The Odin Project Fundamentals Course</a>
 
-Read <a href="https://en.wikipedia.org/wiki/Etch_A_Sketch">here</a>if you need more info about what Etch-A-Sketch is.
+Read <a href="https://en.wikipedia.org/wiki/Etch_A_Sketch">here</a> if you need more info about what Etch-A-Sketch is.
 
 ### How it works
 *On load, a 16x16 grid of square divs is created
