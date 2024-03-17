@@ -8,10 +8,13 @@ Read <a href="https://en.wikipedia.org/wiki/Etch_A_Sketch">this article</a> if y
 
 * On load, a ```16x16``` grid of square ```div```s is created
 * On right-side panel, you can choose between several options
-* If clicked on ```clear surface```, ```confirm``` prompt will appear
-* If clicked on ```generate grid```, you will be prompted to enter a value between ```1-100```
-* Using a value entered in prompt, a new grid with that value is created (e.g. ```100``` creates a ```100x100``` grid)
+* User can choose between several color buttons
+* If clicked ```Select Color```, a popup color palette will display
+* If clicked on ```Generate Grid```, you will be prompted to enter a value between ```1-100```
+* Using a value entered in ```input``` prompt, a new grid with that value is created (e.g. ```100``` creates a ```100x100``` grid)
+* When pressed ```Reset Grid```, it prompts the user to ```confirm``` the action
+* If clicked on ```Clear Surface```, ```Confirm``` prompt will appear
 
-Hope you enjoy playing :+1:
+Hope you enjoy drawing colors :+1:
 
 @dejanpls

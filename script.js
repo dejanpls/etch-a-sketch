@@ -85,8 +85,8 @@ function generateGrid(rows, columns, numberOfBoxes) {
 	for (; numberOfBoxes > 0; numberOfBoxes--) {
 		const gridBox = document.createElement("div");
 		gridBox.classList = "grid-box";
-		gridBox.style.width = `${600 / rows}px`
-		gridBox.style.height = `${600 / rows}px`
+		gridBox.style.width = `${600 / rows}px`;
+		gridBox.style.height = `${600 / columns}px`;
 		gridContainer.appendChild(gridBox);
 	}
 
@@ -102,7 +102,9 @@ function generateStartGrid() {
 	// If existing grid, remove it.
 	existingGridBoxes = document.querySelectorAll("div.grid-box");
 	if (existingGridBoxes.length > 0) {
-		existingGridBoxes.forEach(box => gridContainer.removeChild(box));
+		if(confirm("Are you sure you want to override current grid?")) {
+			existingGridBoxes.forEach(box => gridContainer.removeChild(box));
+		}
 	}
 
 	generateGrid(rows, columns, numberOfBoxes);
